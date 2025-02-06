@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TREX MD SESSION SITE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .btn {
+      --color: white;
+      width: 260px;
+      padding: 1em 2em;
+      background-color: rgba(0, 0, 0, 0.3);
+      border: none;
+      position: relative;
+      cursor: pointer;
+      font-weight: 300;
+      font-size: 17px;
+      font-family: 'Roboto', 'Segoe UI', sans-serif;
+      text-transform: uppercase;
+      color: var(--color);
+      margin-bottom: 24px;
+      transition: all 0.4s ease;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+      );
+      background-size: 400%;
+      z-index: -1;
+      animation: rainbow-border 20s linear infinite;
+    }
+
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        45deg,
+        transparent 20%,
+        rgba(255, 215, 0, 0.1) 50%,
+        transparent 80%
+      );
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .btn:hover {
+      background-color: rgba(15, 15, 15, 0.6);
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+
+    .btn:hover::after {
+      opacity: 1;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+      background-color: rgba(255, 215, 0, 0.1);
+    }
+
+    @keyframes rainbow-border {
+      0% { background-position: 0 0; }
+      100% { background-position: 400% 0; }
+    }
+  </style>
+</head>
+<body>
+  <video autoplay loop muted>
+    <source src="https://files.catbox.moe/05t1pj.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <button onclick="window.open(`/pair`)" class="btn">Pair</button>
+  <button onclick="window.open('https://deploy-fld5.vercel.app/')" class="btn">Bot Features</button>
+  <button onclick="window.open(`https://github.com/Berabruce/BERA-MD/fork`)" class="btn">BERA MD</button>
+  <button onclick="window.open(`https://github.com/Berabruce/TREX-MD/fork`)" class="btn">TREX MD</button>
+  <button onclick="window.open(`https://whatsapp.com/channel/0029VajJoCoLI8YePbpsnE3q`)" class="btn">Support</button>
+  <button onclick="window.open(`https://wa.me//+254743982206`)" class="btn">Chat Bera</button>
+</body>
+</html>
